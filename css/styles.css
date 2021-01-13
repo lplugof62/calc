@@ -1,0 +1,54 @@
+@media(min-width:6px) {
+    .body div.calculadora {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-content: space-between;
+    }
+/*aspectos generales: bordes y color de fondo de calculadora*/
+body div.calculadora { 
+    border: 3px rgb(200, 43, 231) ridge;
+    width: 380px;
+    height: 480px;
+    text-align: center;
+    background-color: #f6f8d8; 
+    border-radius: 20px;
+    margin: auto;
+    padding: 30px;
+    display: flex;
+}
+
+/*pantalla de visualización: bordes, posición, color de fondo, estilo letra.*/
+#textoPantalla { 
+    width: 350px;
+    height: 50px;
+    border: 2px rgb(153, 90, 148) solid; 
+    text-align: right; 
+    position:  relative;
+    left: 0px;
+    padding: 0px 5px;
+    background-color: rgb(236, 222, 236); 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    font-size: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/*botones normales: anchura y margen*/
+#ContenedorBotones [type=button] { 
+    width: 70px; 
+    padding: 20px;  
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    font-size: 20px;
+    text-align: center;
+    justify-content: space-between;
+    cursor: pointer;  
+    border-radius: px;
+}
+/*botones especiales*/
+#ContenedorBotones input.largo { 
+    color: red; 
+    width: 120px; 
+}
