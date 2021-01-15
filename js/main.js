@@ -64,9 +64,9 @@ function raizc() {
     xi = 1; //se puede reiniciar la pantalla 
 }
 
-function porcent() { 
-    x=x/100 //dividir por 100 el número
-    pantalla.innerHTML=x; //mostrar en pantalla
+function porcent() {
+    x = x / 100 //dividir por 100 el número
+    pantalla.innerHTML = x; //mostrar en pantalla
     igualar() //resolver y mostrar operaciones pendientes
     xi=1 //reiniciar la pantalla
 }
@@ -75,4 +75,16 @@ function borradoTotal() {
     pantalla.innerHTML = '';
 }
 
-    
+function borradoParcial() {
+    pantalla.innerHTML = 0; //Borrado de pantalla;
+    x = 0; //Borrado indicador número pantalla.
+    coma = 0; //reiniciamos también la coma					
+}
+
+function borradoTotal() {
+    pantalla.innerHTML = 0; //poner pantalla a 0
+    x = "0"; //reiniciar número en pantalla
+    coma = 0; //reiniciar estado coma decimal 
+    ni = 0 //indicador de número oculto a 0;
+    op = "no" //borrar operación en curso.
+}

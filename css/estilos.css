@@ -53,8 +53,8 @@ nav .logotipo {
 }
 
 nav .enlaces {
-  /* display: flex;
-		align-items: center; */
+  display: flex;
+		align-items: center;
 }
 
 nav .enlaces .switch {
