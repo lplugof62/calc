@@ -1,3 +1,9 @@
+body {
+    background-image: url('https://cdn.pixabay.com/photo/2015/06/08/15/11/typewriter-801921_960_720.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
 @media(min-width:6px) {
     .body div.calculadora {
         display: flex;
@@ -5,6 +11,7 @@
         flex-wrap: wrap;
         align-content: space-between;
     }
+}
 /*aspectos generales: bordes y color de fondo de calculadora*/
 body div.calculadora { 
     border: 3px rgb(200, 43, 231) ridge;
