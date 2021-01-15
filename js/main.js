@@ -1,13 +1,40 @@
-window.onload = function () { //Acciones tras cargar la página
+window.addEventListener('load', (e) => {
+    //Acciones tras cargar la página
     pantalla = document.getElementById("textoPantalla"); //elemento pantalla de salida
-    document.onkeydown = teclado; //función teclado disponible
-}
+    /* document.onkeydown = teclado; */ //función teclado disponible
+});
 
 x = "0"; //guardar número en pantalla
 xi = 1; //iniciar número en pantalla: 1=si; 0=no;
 coma = 0; //estado coma decimal 0=no, 1=si;
 ni = 0; //número oculto o en espera.
 op = "no"; //operación en curso; "no" =  sin operación.
+
+/* Evento al precionar las teclas */
+document.addEventListener('keydown', (e) => {
+    const numbers = "1234567890.";
+    const op = "+*/-%";
+
+    let codigo = e.key || e.code; /* Optenemos el codi o nombre de la tecla precionada */
+
+    if (numbers.includes(codigo)) {/* Realizamos una comparacion para saber si la tecla pulsada equivale a un numero */
+        console.log("Si esta");
+        /* Si es correcto lo manda a la funcion numero() la cual realiza el proceso de mostrar en pantalla */
+        numero(codigo);
+    }else if (op.includes(codigo)) {/* Realizamos otra comparacion para saber si la tecla pulsada equivale a un operador */
+        /* Si es correcto lo manda a la funcion operar()*/
+        operar(codigo);
+    }else if (codigo === 'Enter') {
+        igualar();
+    }else if (codigo === 'Backspace') {
+        retro();
+    }else if(codigo === 'C' || codigo === 'c'){
+        borradoTotal();
+    }else {
+        alert('Dato no valido');
+        return;
+    }
+});
 
 function numero(xx) { //recoge el número pulsado en el argumento.
     if (x == "0" || xi == 1) { // inicializar un número, 
@@ -45,7 +72,8 @@ function operar(s) {
 
 function igualar() {
     if (op == "no") { //no hay ninguna operación pendiente.
-        pantalla.innerHTML = x;	//mostramos el mismo número	
+        //pantalla.innerHTML = x;	//mostramos el mismo número
+        alert("No hay ninguna operación a realizar");
     }
     else { //con operación pendiente resolvemos
         sl = ni + op + x; // escribimos la operación en una cadena
