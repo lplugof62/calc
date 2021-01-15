@@ -1,0 +1,207 @@
+$gris:#E0E0E0;
+$blanco: #FFFFFF;
+$negro: #111111;
+$grisOscuro: #222222;
+$grisClaro: #C8C8C8;
+$grisClaroHover: #ACABAB;
+$azul: #3E60E9;
+$azulHover: #254BE6;
+$purple: rgb(153, 90, 148);
+
+$sombraDark: 10px 10px 20px rgba(170,170,170,.16);
+$sombraLight: 10px 10px 20px rgba(0,0,0,.16);
+
+$sombraCardLight: 16px 16px 31px #bebebe, -16px -16px 31px #ffffff;
+$sombraCardDark: 35px 35px 70px #0a0a0a, -35px -35px 70px #181818;
+
+$bgbtnDark: linear-gradient(145deg, #0f0f0f, #121212);
+$sombrabtnLight: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
+$sombrabtnDark: 5px 5px 15px #0a0a0a, -5px -5px 15px #181818;
+$bgbtnLight: linear-gradient(145deg, #f0f0f0, #cacaca);
+
+$transision3s: .3s ease all;
+
+body {
+	background-color: $gris;
+	font-family: 'Roboto', sans-serif;
+    transition: $transision3s;
+    
+    &.dark {
+        background-color: $negro;
+    }
+}
+
+a {
+	color: $grisOscuro;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+nav {
+    background: $blanco;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px 20px;
+	transition: $transision3s;
+    box-shadow: $sombraDark;
+    margin-bottom: 30px;
+
+    body.dark & {
+        background-color: $grisOscuro;
+        box-shadow: $sombraLight;
+
+        a {
+            color: $grisClaro;
+            &:hover {
+                color: $blanco;
+            }
+        }
+    }
+    
+    .logotipo {
+		font-weight: 700;
+		font-family: 'Roboto', sans-serif;
+    }
+    .enlaces {
+		/* display: flex;
+		align-items: center; */
+        // #######  SWITCH  ########
+        .switch {
+            background-color: #343d5b;
+            border-radius: 1000px;
+            border: none;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            outline: none;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                background: #f1f1f1;
+                top: 0;
+                left: 0;
+                right: unset;
+                border-radius: 100px;
+                transition: .3s ease all;
+                box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
+            }
+            &.active {
+                background: orange;
+                &::after{
+                    left: unset;
+                    right: 0;
+                }
+            }
+
+            span {
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                display: block;
+                background: none;
+                color: $blanco;
+            }
+        }
+	}
+}
+
+.calculadora {
+    width: 400px;
+    height: 440px;
+    text-align: center;
+    border-radius: 30px;
+    margin: auto;
+    padding: 30px;
+    display: flex;
+    background-color: $gris;
+    box-shadow: $sombraCardLight;
+    transition: $transision3s;
+
+    body.dark & {
+        background-color: $negro;
+        box-shadow: $sombraCardDark;
+    }
+
+    #calculadora {
+        width: 100%;
+    }
+    #textoPantalla { 
+        width: 97%;
+        height: 50px;
+        border: 2px $purple solid; 
+        position:  relative;
+        padding: 0px 15px;
+        background-color: rgba(236, 222, 236, 0); 
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+        font-size: 25px;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        body.dark &{
+            border: none;
+            background-color: $blanco;
+        }
+    }
+    #ContenedorBotones {
+        width: 100%;
+        p{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            input.largo{
+                width: 120px;
+            }
+
+            .op{
+                color: $purple;
+            }
+            input{ 
+                width: 70px; 
+                padding: 20px;
+                border: none;
+                text-align: center;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+                font-size: 20px;
+                font-weight: 700;
+                text-align: center;
+                justify-content: space-between;
+                cursor: pointer;  
+                border-radius: 25px;
+                background: $bgbtnLight;
+                box-shadow: $sombrabtnLight;
+                transition: $transision3s;
+
+                body.dark & {
+                    background: $bgbtnDark !important;
+                    box-shadow: $sombrabtnDark;
+                    color: $blanco;
+                }
+            }
+            input.largo { 
+                color: red; 
+                width: 110px;
+            }
+            input:focus {
+                border: none;
+                outline: none;
+            }
+            input:active {
+                border: none;
+                border: 4px solid var(--gray-color);
+                box-shadow: -10px -10px 30px var(--white-color), 10px 10px 40px var(--dark-color), 
+                inset 6px 6px 12px #bebebe, 
+                inset -6px -6px 12px #ffffff;
+            }
+        }
+    }
+}

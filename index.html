@@ -4,17 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
+    <link rel="stylesheet" href="css/estilos.css">
 
     <title>Calculator</title>
-
 </head>
-
 <body>
+    <nav>
+        <a class="logotipo" href="#">Herramientas</a>
+        <div class="enlaces">
+            <button class="switch" id="switch">
+                <span><i class="fas fa-sun"></i></span>
+                <span><i class="fas fa-moon"></i></span>
+            </button>
+        </div>
+    </nav>
     <div class="calculadora">
         <form action="#" name="calculadora" id="calculadora">
             <div id="textoPantalla">
-                <p>0</p>
+                <span>0</span>
             </div>
             <div id="ContenedorBotones">
                 <p>
@@ -26,34 +37,35 @@
                     <input type="button" value="7" onclick="numero('7')"/>
                     <input type="button" value="8" onclick="numero('8')"/>
                     <input type="button" value="9" onclick="numero('9')"/>
-                    <input type="button" value="/" onclick="operar('/')"/>
-                    <input type="button" value="Raiz" onclick="raizc()"/>
+                    <input class="op" type="button" value="/" onclick="operar('/')"/>
+                    <input class="op" type="button" value="Raiz" onclick="raizc()"/>
                 </p>
                 <p>
                     <input type="button" value="4" onclick="numero('4')"/>
                     <input type="button" value="5" onclick="numero('5')"/>
                     <input type="button" value="6" onclick="numero('6')"/>
-                    <input type="button" value="*" onclick="operar('*')"/>
-                    <input type="button" value="%" onclick="porcent()"/>
+                    <input class="op" type="button" value="*" onclick="operar('*')"/>
+                    <input class="op" type="button" value="%" onclick="porcent()"/>
                 </p>
                 <p>
                     <input type="button" value="1" onclick="numero('1')"/>
                     <input type="button" value="2" onclick="numero('2')"/>
                     <input type="button" value="3" onclick="numero('3')"/>
-                    <input type="button" value="-" onclick="operar('-')"/>
-                    <input type="button" value="1/x" onclick="inve()"/>
+                    <input class="op" type="button" value="-" onclick="operar('-')"/>
+                    <input class="op" type="button" value="1/x" onclick="inve()"/>
                 </p>
                 <p>
                     <input type="button" value="0" onclick="numero('0')"/>
-                    <input type="button" value="+/-" onclick="opuest()"/>
+                    <input class="op" type="button" value="+/-" onclick="opuest()"/>
                     <input type="button" value="." onclick="numero('.')"/>
-                    <input type="button" value="+" onclick="operar('+')"/>
+                    <input class="op" type="button" value="+" onclick="operar('+')"/>
                     <input type="button" value="=" onclick="igualar()"/>
                 </p>
             </div>
         </form>
     </div>
     <script src="js/main.js"></script>
+    <script src="js/switch.js"></script>
 </body>
 
 </html>

@@ -69,6 +69,10 @@ function porcent() {
     pantalla.innerHTML=x; //mostrar en pantalla
     igualar() //resolver y mostrar operaciones pendientes
     xi=1 //reiniciar la pantalla
-    }
+}
+
+function borradoTotal() {
+    pantalla.innerHTML = '';
+}
 
     
