@@ -1,13 +1,40 @@
-window.onload = function () { //Acciones tras cargar la página
+window.addEventListener('load', (e) => {
+    //Acciones tras cargar la página
     pantalla = document.getElementById("textoPantalla"); //elemento pantalla de salida
-    document.onkeydown = teclado; //función teclado disponible
-}
+    /* document.onkeydown = teclado; */ //función teclado disponible
+});
 
 x = "0"; //guardar número en pantalla
 xi = 1; //iniciar número en pantalla: 1=si; 0=no;
 coma = 0; //estado coma decimal 0=no, 1=si;
 ni = 0; //número oculto o en espera.
 op = "no"; //operación en curso; "no" =  sin operación.
+
+/* Evento al precionar las teclas */
+document.addEventListener('keydown', (e) => {
+    const numbers = "1234567890.";
+    const op = "+*/-%";
+
+    let codigo = e.key || e.code; /* Optenemos el codi o nombre de la tecla precionada */
+
+    if (numbers.includes(codigo)) {/* Realizamos una comparacion para saber si la tecla pulsada equivale a un numero */
+        console.log("Si esta");
+        /* Si es correcto lo manda a la funcion numero() la cual realiza el proceso de mostrar en pantalla */
+        numero(codigo);
+    }else if (op.includes(codigo)) {/* Realizamos otra comparacion para saber si la tecla pulsada equivale a un operador */
+        /* Si es correcto lo manda a la funcion operar()*/
+        operar(codigo);
+    }else if (codigo === 'Enter') {
+        igualar();
+    }else if (codigo === 'Backspace') {
+        retro();
+    }else if(codigo === 'C' || codigo === 'c'){
+        borradoTotal();
+    }else {
+        alert('Dato no valido');
+        return;
+    }
+});
 
 function numero(xx) { //recoge el número pulsado en el argumento.
     if (x == "0" || xi == 1) { // inicializar un número, 
@@ -45,7 +72,8 @@ function operar(s) {
 
 function igualar() {
     if (op == "no") { //no hay ninguna operación pendiente.
-        pantalla.innerHTML = x;	//mostramos el mismo número	
+        //pantalla.innerHTML = x;	//mostramos el mismo número
+        alert("No hay ninguna operación a realizar");
     }
     else { //con operación pendiente resolvemos
         sl = ni + op + x; // escribimos la operación en una cadena
@@ -68,11 +96,30 @@ function porcent() {
     x = x / 100 //dividir por 100 el número
     pantalla.innerHTML = x; //mostrar en pantalla
     igualar() //resolver y mostrar operaciones pendientes
-    xi=1 //reiniciar la pantalla
+    xi = 1 //reiniciar la pantalla
 }
 
-function borradoTotal() {
-    pantalla.innerHTML = '';
+function opuest() {
+    nx = Number(x); //convertir en número
+    nx = -nx; //cambiar de signo
+    x = String(nx); //volver a convertir a cadena
+    pantalla.innerHTML = x; //mostrar en pantalla.
+}
+
+function potencia() {
+    x = Math.pow(x, 2) //Resolver potencia
+    pantalla.innerHTML = x; //mostrar en pantalla
+    igualar() //resolver y mostrar operaciones pendientes
+    xi = 1 //reiniciar la pantalla
+}
+
+function retro() { //Borrar sólo el último número escrito.
+    cifras = x.length; //hayar número de caracteres en pantalla
+    br = x.substr(cifras - 1, cifras) //info del último caracter
+    x = x.substr(0, cifras - 1) //quitar el ultimo caracter
+    if (x == "") { x = "0"; } //si ya no quedan caracteres, pondremos el 0
+    if (br == ".") { coma = 0; } //Si hemos quitado la coma, se permite escribirla de nuevo.
+    pantalla.innerHTML = x; //mostrar resultado en pantalla	 
 }
 
 function borradoParcial() {
