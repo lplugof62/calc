@@ -1,12 +1,11 @@
 body {
-  background-color: #E0E0E0;
-  font-family: 'Roboto', sans-serif;
-  -webkit-transition: 0.3s ease all;
-  transition: 0.3s ease all;
-}
-
-body.dark {
-  background-color: #111111;
+  background-image: url("https://cdn.pixabay.com/photo/2015/06/08/15/11/typewriter-801921_960_720.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  /* &.dark {
+        background-color: $negro;
+    } */
 }
 
 a {
@@ -115,17 +114,15 @@ nav .enlaces .switch span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: #E0E0E0;
-  -webkit-box-shadow: 16px 16px 31px #bebebe, -16px -16px 31px #ffffff;
-          box-shadow: 16px 16px 31px #bebebe, -16px -16px 31px #ffffff;
+  background-color: #FFFFFF;
+  /* box-shadow: $sombraCardLight; */
   -webkit-transition: 0.3s ease all;
   transition: 0.3s ease all;
 }
 
 body.dark .calculadora {
   background-color: #111111;
-  -webkit-box-shadow: 35px 35px 70px #0a0a0a, -35px -35px 70px #181818;
-          box-shadow: 35px 35px 70px #0a0a0a, -35px -35px 70px #181818;
+  /* box-shadow: $sombraCardDark; */
 }
 
 .calculadora #calculadora {
@@ -133,7 +130,7 @@ body.dark .calculadora {
 }
 
 .calculadora #textoPantalla {
-  width: 97%;
+  width: 92%;
   height: 50px;
   border: 2px #995a94 solid;
   position: relative;
@@ -196,7 +193,7 @@ body.dark .calculadora #textoPantalla {
           justify-content: space-between;
   cursor: pointer;
   border-radius: 25px;
-  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  background: linear-gradient(145deg, #ffffff, #ffffff);
   -webkit-box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
           box-shadow: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
   -webkit-transition: 0.3s ease all;

@@ -17,18 +17,19 @@ $sombraCardDark: 35px 35px 70px #0a0a0a, -35px -35px 70px #181818;
 $bgbtnDark: linear-gradient(145deg, #0f0f0f, #121212);
 $sombrabtnLight: 6px 6px 12px #bebebe, -6px -6px 12px #ffffff;
 $sombrabtnDark: 5px 5px 15px #0a0a0a, -5px -5px 15px #181818;
-$bgbtnLight: linear-gradient(145deg, #f0f0f0, #cacaca);
+$bgbtnLight: linear-gradient(145deg, #ffffff, #ffffff);
 
 $transision3s: .3s ease all;
 
 body {
-	background-color: $gris;
-	font-family: 'Roboto', sans-serif;
-    transition: $transision3s;
+	background-image: url('https://cdn.pixabay.com/photo/2015/06/08/15/11/typewriter-801921_960_720.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     
-    &.dark {
+    /* &.dark {
         background-color: $negro;
-    }
+    } */
 }
 
 a {
@@ -118,20 +119,20 @@ nav {
     margin: auto;
     padding: 30px;
     display: flex;
-    background-color: $gris;
-    box-shadow: $sombraCardLight;
+    background-color: $blanco;
+    /* box-shadow: $sombraCardLight; */
     transition: $transision3s;
 
     body.dark & {
         background-color: $negro;
-        box-shadow: $sombraCardDark;
+        /* box-shadow: $sombraCardDark; */
     }
 
     #calculadora {
         width: 100%;
     }
     #textoPantalla { 
-        width: 97%;
+        width: 92%;
         height: 50px;
         border: 2px $purple solid; 
         position:  relative;
