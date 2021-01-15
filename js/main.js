@@ -68,11 +68,30 @@ function porcent() {
     x = x / 100 //dividir por 100 el número
     pantalla.innerHTML = x; //mostrar en pantalla
     igualar() //resolver y mostrar operaciones pendientes
-    xi=1 //reiniciar la pantalla
+    xi = 1 //reiniciar la pantalla
 }
 
-function borradoTotal() {
-    pantalla.innerHTML = '';
+function opuest() {
+    nx = Number(x); //convertir en número
+    nx = -nx; //cambiar de signo
+    x = String(nx); //volver a convertir a cadena
+    pantalla.innerHTML = x; //mostrar en pantalla.
+}
+
+function potencia() {
+    x = Math.pow(x, 2) //Resolver potencia
+    pantalla.innerHTML = x; //mostrar en pantalla
+    igualar() //resolver y mostrar operaciones pendientes
+    xi = 1 //reiniciar la pantalla
+}
+
+function retro() { //Borrar sólo el último número escrito.
+    cifras = x.length; //hayar número de caracteres en pantalla
+    br = x.substr(cifras - 1, cifras) //info del último caracter
+    x = x.substr(0, cifras - 1) //quitar el ultimo caracter
+    if (x == "") { x = "0"; } //si ya no quedan caracteres, pondremos el 0
+    if (br == ".") { coma = 0; } //Si hemos quitado la coma, se permite escribirla de nuevo.
+    pantalla.innerHTML = x; //mostrar resultado en pantalla	 
 }
 
 function borradoParcial() {
