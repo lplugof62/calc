@@ -72,8 +72,7 @@ function operar(s) {
 
 function igualar() {
     if (op == "no") { //no hay ninguna operación pendiente.
-        //pantalla.innerHTML = x;	//mostramos el mismo número
-        alert("No hay ninguna operación a realizar");
+        pantalla.innerHTML = x;	//mostramos el mismo número        
     }
     else { //con operación pendiente resolvemos
         sl = ni + op + x; // escribimos la operación en una cadena

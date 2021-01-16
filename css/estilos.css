@@ -176,7 +176,7 @@ body.dark .calculadora #textoPantalla {
 }
 
 .calculadora #ContenedorBotones p .op {
-  color: #995a94;
+  color:  rgb(188, 7, 224);
 }
 
 .calculadora #ContenedorBotones p input {
